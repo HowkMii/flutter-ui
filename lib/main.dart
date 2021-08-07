@@ -30,7 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Flutter Demo Home Page'),
       ),
-      body: null,
+      body: Center(
+        child: Text("Pink/Amber", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35)),
+      ),
 
     );
   }
