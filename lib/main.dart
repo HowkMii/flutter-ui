@@ -31,7 +31,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter Demo Home Page'),
       ),
       body: Center(
-        child: Text("Pink/Amber", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35)),
+        child: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(text: "Pink",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35,color: Colors.pink)),
+              TextSpan(text: "/",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35,color: Colors.black)),
+              TextSpan(text: "Amber",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35,color: Colors.amber)),
+            ]
+          ),
+        ),
       ),
 
     );
