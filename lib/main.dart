@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,9 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
        
-        title: Text(widget.title),
+        title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.pink),),
+        backgroundColor: Colors.amber,
       ),
       body: Center(
+        child: null,
+
 
       ), 
     );
