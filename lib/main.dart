@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
    
     return Scaffold(
       appBar: AppBar(
+
         leading: Padding(padding: EdgeInsets.only(left: 1),
           child:Row(
             children: [
@@ -65,10 +66,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         centerTitle: true,
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
-        backgroundColor: Colors.amber,
+       
       ),
       body: Center(
-        child: null,
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(),
+            SliverList(delegate: SliverChildListDelegate([
+              
+            ]),)
+          ],
+        ),
 
 
       ), 
