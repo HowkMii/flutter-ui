@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
+              expandedHeight:250 ,
               leading: Padding(padding: EdgeInsets.only(left: 1),
           child:Row(
             children: [
