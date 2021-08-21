@@ -39,6 +39,18 @@ class _MyHomePageState extends State<MyHomePage> {
    
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors:[
+                Colors.deepPurpleAccent,
+                Colors.pink
+              ]
+              
+            )
+
+          ),
+        ),
        
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.pink),),
         backgroundColor: Colors.amber,
