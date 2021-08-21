@@ -39,13 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
    
     return Scaffold(
-     
-      body: Center(
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              expandedHeight:250 ,
-              leading: Padding(padding: EdgeInsets.only(left: 1),
+      appBar: AppBar(
+
+        leading: Padding(padding: EdgeInsets.only(left: 1),
           child:Row(
             children: [
               IconButton(icon: Icon(Icons.account_circle), onPressed: (){}),
@@ -71,15 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
-            ),
-            SliverList(delegate: SliverChildListDelegate([
-              
-            ]),)
-          ],
-        ),
-
-
-      ), 
+      ),
+      body:null
     );
   }
 }
