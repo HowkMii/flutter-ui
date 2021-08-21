@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
        
@@ -39,6 +40,17 @@ class _MyHomePageState extends State<MyHomePage> {
    
     return Scaffold(
       appBar: AppBar(
+        leading: Padding(padding: EdgeInsets.only(left: 1),
+          child:Row(
+            children: [
+              IconButton(icon: Icon(Icons.account_circle), onPressed: (){}),
+              Expanded(child: IconButton(icon: Icon(Icons.account_circle), onPressed: (){}))
+            ],) ,
+        ),
+        actions: [
+          IconButton(icon: Icon(Icons.account_circle), onPressed: (){}),
+          IconButton(icon: Icon(Icons.account_circle), onPressed: (){})
+        ],
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -51,8 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
           ),
         ),
-       
-        title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.pink),),
+        centerTitle: true,
+        title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
         backgroundColor: Colors.amber,
       ),
       body: Center(
