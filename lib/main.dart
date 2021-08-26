@@ -80,7 +80,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: [
                     Divider(color: Colors.pink,),
-                    Text("this dialog text ")
+                    Text("this dialog text "),
+                    SizedBox(height: 7,),
+                    SizedBox(
+                      width: double.infinity,
+                      child: RaisedButton(
+                        color:Colors.red,
+                        child: Text("Close"),
+                        onPressed: (){},
+                      ),
+                    )
+
                   ],
                 ),
               ) ,
