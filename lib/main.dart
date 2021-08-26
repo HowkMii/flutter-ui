@@ -74,7 +74,16 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text("data"),
           onPressed:(){
             final AlertDialog alert = AlertDialog(
-              content: Text("this dialog text ") ,
+              title: Text("Dialog"),
+              content: Container(
+                height: 150,
+                child: Column(
+                  children: [
+                    Divider(color: Colors.pink,),
+                    Text("this dialog text ")
+                  ],
+                ),
+              ) ,
             );
             showDialog(context: context, builder: (BuildContext ctx){
               return alert;
