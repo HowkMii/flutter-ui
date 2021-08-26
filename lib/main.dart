@@ -90,7 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         color:Colors.red,
                         child: Text("Close"),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        },
                       ),
                     )
 
