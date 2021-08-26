@@ -85,6 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       width: double.infinity,
                       child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)
+                        ),
                         color:Colors.red,
                         child: Text("Close"),
                         onPressed: (){},
