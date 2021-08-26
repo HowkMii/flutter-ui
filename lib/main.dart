@@ -69,13 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
        
       ),
       body:Center(
+        //or
         child: RaisedButton(
           child: Text("data"),
           onPressed:(){
             final alert = AlertDialog();
-            showDialog(context: context, builder: (BuildContext ctx){
-              return alert;
-            });
+            showDialog(context: context,child: alert);
           } ,
         )
         ,
