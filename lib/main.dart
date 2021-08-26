@@ -111,6 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     showDialog(context: context, builder: (BuildContext ctx){
       return alert;
-    },barrierDismissible: false);
+    },barrierDismissible: false,barrierColor: Colors.black.withOpacity(0.5));
   }
 }
