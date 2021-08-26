@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.circular(30)
                 ),
                 color:Colors.red,
-                child: Text("Close"),
+                child: Text("Close",style: TextStyle(color: Colors.white),),
                 onPressed: (){
                   Navigator.of(context).pop();
                 },
@@ -111,6 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     showDialog(context: context, builder: (BuildContext ctx){
       return alert;
-    });
+    },barrierDismissible: false);
   }
 }
