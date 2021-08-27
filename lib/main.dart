@@ -73,7 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: RaisedButton(
           child: Text("Show SnackBar"),
           onPressed: (){
-            final Sbar = SnackBar(content: Text("Snackbar Text"));
+            final Sbar = SnackBar(content: Text("Snackbar Text"),
+            duration: Duration(microseconds: 4000),
+              backgroundColor: Colors.red,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            );
             //or
             _x.currentState.showSnackBar(Sbar);
           },
