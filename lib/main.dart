@@ -69,48 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
        
       ),
       body:Center(
-        //or
         child: RaisedButton(
-          child: Text("data"),
-          onPressed:(){
-            buildDialog(context);
-          } ,
-        )
-        ,
+          child: Text("Show SnackBar"),
+          onPressed: (){},
+        ),
+        
       ),
     );
   }
 
-  void buildDialog(BuildContext context) {
-      final AlertDialog alert = AlertDialog(
-      title: Text("Dialog"),
-      content: Container(
-        height: 150,
-        child: Column(
-          children: [
-            Divider(color: Colors.pink,),
-            Text("this dialog text "),
-            SizedBox(height: 7,),
-            SizedBox(
-              width: double.infinity,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)
-                ),
-                color:Colors.red,
-                child: Text("Close",style: TextStyle(color: Colors.white),),
-                onPressed: (){
-                  Navigator.of(context).pop();
-                },
-              ),
-            )
-
-          ],
-        ),
-      ) ,
-    );
-    showDialog(context: context, builder: (BuildContext ctx){
-      return alert;
-    },barrierDismissible: false,barrierColor: Colors.black.withOpacity(0.5));
-  }
 }
