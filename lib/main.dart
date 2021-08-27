@@ -33,13 +33,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- final GlobalKey<ScaffoldState> _x=GlobalKey<ScaffoldState>();
+ 
 
   @override
   Widget build(BuildContext context) {
    
     return Scaffold(
-      key: _x,
       appBar: AppBar(
 
         leading: Padding(padding: EdgeInsets.only(left: 1),
@@ -74,7 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text("Show SnackBar"),
           onPressed: (){
             final Sbar = SnackBar(content: Text("Snackbar Text"));
-            _x.currentState.showSnackBar(Sbar);
+            //or
+            Scaffold.of(context).showSnackBar(Sbar);
           },
         ),
         
