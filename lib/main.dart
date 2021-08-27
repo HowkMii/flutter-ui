@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
+  
 
   final String title;
 
@@ -33,12 +33,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- 
+ final GlobalKey<ScaffoldState> _x=GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
    
     return Scaffold(
+      key: _x,
       appBar: AppBar(
 
         leading: Padding(padding: EdgeInsets.only(left: 1),
@@ -71,7 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body:Center(
         child: RaisedButton(
           child: Text("Show SnackBar"),
-          onPressed: (){},
+          onPressed: (){
+            final Sbar = SnackBar(content: Text("Snackbar Text"));
+            _x.currentState.showSnackBar(Sbar);
+          },
         ),
         
       ),
