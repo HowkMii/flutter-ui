@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'package:flushbar/flushbar.dart';
 
 import 'package:flutter/material.dart';
 
@@ -71,15 +72,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:Center(
         child: RaisedButton(
-          child: Text("Show SnackBar"),
+          child: Text("Show FlushBar"),
           onPressed: (){
-            final Sbar = SnackBar(content: Text("Snackbar Text"),
-            duration: Duration(microseconds: 4000),
-              backgroundColor: Colors.red,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            );
-            //or
-            _x.currentState.showSnackBar(Sbar);
+           Flushbar(
+            title: "this is the title",
+            message: "this is the message",
+           ).show(context);
+          
+          
           },
         ),
         
