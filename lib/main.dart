@@ -74,7 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SelectableText("this  is a clipped text this  is a clipped text vthis  is a clipped text th"),
+          SelectableText(
+            "this  is a clipped text this  is a clipped text vthis  is a clipped text th",
+            showCursor: true,
+            toolbarOptions:ToolbarOptions(copy: true,) ,
+            ),
           SizedBox(height: 8,),
           Container(
             width: 200,
