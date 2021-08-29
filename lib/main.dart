@@ -78,9 +78,37 @@ class _MyHomePageState extends State<MyHomePage> {
             width: 200,
             height: 40,
             color: Colors.green,
-            child: Text("this  is a clipped text "),
+            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text "),
           ),
-          SizedBox(height: 8,)
+          SizedBox(height: 8,),
+                    Container(
+            width: 200,
+            height: 40,
+            color: Colors.green,
+            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text "),
+          ),
+          SizedBox(height: 8,),
+                    Container(
+            width: 200,
+            height: 40,
+            color: Colors.green,
+            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text "),
+          ),
+          SizedBox(height: 8,),
+                    Container(
+            width: 200,
+            height: 40,
+            color: Colors.green,
+            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text "),
+          ),
+          SizedBox(height: 8,),
+                    Container(
+            width: 200,
+            height: 40,
+            color: Colors.green,
+            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text "),
+          ),
+          SizedBox(height: 8,),
         ],
       )
     );
