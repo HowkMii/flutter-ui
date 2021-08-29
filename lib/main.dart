@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: 200,
             height: 40,
             color: Colors.green,
-            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text ",overflow: TextOverflow.clip,),
+            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text ",overflow: TextOverflow.clip,softWrap: false,),
           ),
           SizedBox(height: 8,),
                     Container(
