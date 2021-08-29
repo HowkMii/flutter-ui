@@ -70,22 +70,19 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:Center(
-        child: RaisedButton(
-          child: Text("Show FlushBar"),
-          onPressed: (){
-           Flushbar(
-             icon: Icon(Icons.info, color: Colors.white,),
-            title: "this is the title",
-            message: "this is the message",
-            messageText: Text("this is the message ",style: TextStyle(color: Colors.pink,fontWeight: FontWeight.bold),),
-           ).show(context);
-          
-          
-          },
-        ),
-        
-      ),
+      body:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Container(
+            width: 200,
+            height: 40,
+            color: Colors.green,
+            child: Text("this  is a clipped text "),
+          ),
+          SizedBox(height: 8,)
+        ],
+      )
     );
   }
 
