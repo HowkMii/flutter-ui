@@ -76,54 +76,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          SelectableText(
-            "this  is a clipped text this  is a clipped text vthis  is a clipped text th",
-            showCursor: true,
-            toolbarOptions:ToolbarOptions(copy: true,selectAll: true) ,
-            ),
-          SizedBox(height: 8,),
-          Container(
-            width: 200,
-            height: 40,
-            color: Colors.green,
-            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text ",overflow: TextOverflow.fade,),
-          ),
-          SizedBox(height: 8,),
-                    Container(
-            width: 200,
-            height: 40,
-            color: Colors.green,
-            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text ",overflow: TextOverflow.clip,softWrap: false,),
-          ),
-          SizedBox(height: 8,),
-                    Container(
-            width: 200,
-            height: 40,
-            color: Colors.green,
-            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text ",overflow: TextOverflow.ellipsis,),
-          ),
-          SizedBox(height: 8,),
-                    Container(
-            width: 200,
-            height: 40,
-            color: Colors.green,
-            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text ",overflow: TextOverflow.visible,),
-
-          ),
-          SizedBox(height: 8,),
-                    Container(
-            width: 200,
-            height: 40,
-            color: Colors.green,
-            child: Text("this  is a clipped text this  is a clipped text vthis  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text this  is a clipped text ",overflow: TextOverflow.fade,),
-          ),
-          SizedBox(height: 8,),
+      body:ListView(
+        children: [
+          SizedBox(height: 30,),
+          Text("Slider 1 initial page Index 0\n\n",textAlign: TextAlign.center,)
         ],
-      )
+      ),
     );
   }
 
