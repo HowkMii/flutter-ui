@@ -92,10 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }).toList(),
           ),
           Text("Slider 2 initial page Index 1\n\n",textAlign: TextAlign.center,),
-          CarouselSlider(
-            //2nd methode
-            
-          ),
+          CarouselSlider.builder(itemCount: imgList.length, itemBuilder: null, options: CarouselOptions(height: 186,initialPage:0 ),),
         ],
       ),
     );
