@@ -80,7 +80,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           SizedBox(height: 30,),
           Text("Slider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
-          CarouselSlider(),
+          CarouselSlider(
+            //1st methode
+            options: CarouselOptions(),
+            items: [],
+          ),
         ],
       ),
     );
