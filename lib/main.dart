@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body:ListView(
         children: [
           SizedBox(height: 30,),
-          Text("Slider 1 initial page Index 0\n\n",textAlign: TextAlign.center,)
+          Text("Slider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
+          CarouselSlider(),
         ],
       ),
     );
