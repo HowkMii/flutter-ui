@@ -36,6 +36,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
  final GlobalKey<ScaffoldState> _x =GlobalKey<ScaffoldState>();
+ List imgList=[
+  'images/s1.jpg',
+  'images/s2.jpg',
+  'images/s3.jpg',
+ ];
 
   @override
   Widget build(BuildContext context) {
