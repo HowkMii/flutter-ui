@@ -82,8 +82,14 @@ class _MyHomePageState extends State<MyHomePage> {
           Text("Slider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
           CarouselSlider(
             //1st methode
-            options: CarouselOptions(),
-            items: [],
+            options: CarouselOptions(height: 186,initialPage:0 ),
+            items: imgList.map((imageUrl) {
+              return Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                child:Image.asset(imageUrl,fit: BoxFit.fill,) ,
+              );
+            }).toList(),
           ),
         ],
       ),
