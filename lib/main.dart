@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
           SelectableText(
             "this  is a clipped text this  is a clipped text vthis  is a clipped text th",
             showCursor: true,
-            toolbarOptions:ToolbarOptions(copy: true,) ,
+            toolbarOptions:ToolbarOptions(copy: true,selectAll: true) ,
             ),
           SizedBox(height: 8,),
           Container(
