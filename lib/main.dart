@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Text("mSlider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
           CarouselSlider(
             //1st methode
-            options: CarouselOptions(height: 186,initialPage:0 ,enlargeCenterPage: true, autoPlay: true, autoPlayAnimationDuration: Duration(seconds:1 ), enableInfiniteScroll: false,pauseAutoPlayOnTouch: false),
+            options: CarouselOptions(height: 186,initialPage:0 ,enlargeCenterPage: true, autoPlay: true, autoPlayAnimationDuration: Duration(seconds:1 ), enableInfiniteScroll: false,pauseAutoPlayOnTouch: false, reverse: true),
             items: imgList.map((imageUrl) {
               return Container(
                 width: double.infinity,
