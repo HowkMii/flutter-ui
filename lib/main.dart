@@ -80,38 +80,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:Column(
-        children: [
-          Text("Guess the ansewr : 2+2=?",style: TextStyle(
-            color: Colors.lightBlue,
-            fontWeight: FontWeight.bold,fontSize: 26
-          ),),
-          buildRow(3,"Wrong answer!",Colors.red),
-          buildRow(4,"correct answer!",Colors.green),
-          buildRow(5,"Wrong answer!",Colors.red),
-        ],
-      )
+      body:null
+      
     );
   }
-
-  Row buildRow(int value, String result,Color resultColor) {
-    return Row(
-          children: [
-            Radio(
-              value: value,
-              groupValue:_radioValue ,
-              onChanged: (value){
-                setState(() {
-                  _radioValue=value;
-                  result=result;
-                  resultColor =resultColor;
-                });
-              },
-            ),
-            Text("$value")
-          ],
-        );
-  }
+  
+ 
 
 
 
