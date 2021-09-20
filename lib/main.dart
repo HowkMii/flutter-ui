@@ -95,17 +95,31 @@ class _MyHomePageState extends State<MyHomePage> {
             }).toList(),
           ),
           SizedBox(height: 30,),
-          Container(
-            width: 10,
-            height: 10,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: _currenIndex==0? Colors.redAccent:Colors.green
-            ),
-          )
+          
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              buildContainer(0),
+              buildContainer(1),
+              buildContainer(2),
+            ],
+          ),
         ],
       ),
     );
+  }
+
+  Container buildContainer(index) {
+    return Container(
+          width: 10,
+          height: 10,
+          margin: EdgeInsets.symmetric(horizontal: 3),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            
+            color: _currenIndex==index? Colors.blue:Colors.grey,
+          ),
+        );
   }
 
 }
