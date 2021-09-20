@@ -77,37 +77,24 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:ListView(
+      body:Column(
         children: [
-          SizedBox(height: 50,),
-          Text("mSlider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
-          CarouselSlider(
-            //1st methode
-            options: CarouselOptions(height: 186,initialPage:0 ,onPageChanged: (index ,_){setState(() {
-                          _currenIndex=index;
-                        });},enlargeCenterPage: true, autoPlay: true, autoPlayAnimationDuration: Duration(seconds:3 ), enableInfiniteScroll: false,pauseAutoPlayOnTouch: false, reverse: true),
-            items: imgList.map((imageUrl) {
-              return Container(
-                width: double.infinity,
-                //margin: EdgeInsets.symmetric(horizontal: 10),
-                child:Image.asset(imageUrl,fit: BoxFit.fill,) ,
-              );
-            }).toList(),
-          ),
-          SizedBox(height: 30,),
-          
+          Text("Guess the ansewr : 2+2=?",style: TextStyle(
+            color: Colors.lightBlue,
+            fontWeight: FontWeight.bold,fontSize: 26
+          ),),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              buildContainer(0),
-              buildContainer(1),
-              buildContainer(2),
+              Radio(),
+              Text("3")
             ],
-          ),
+          )
         ],
-      ),
+      )
     );
   }
+
+
 
   Container buildContainer(index) {
     return Container(
@@ -121,5 +108,37 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         );
   }
-
+  Container buildCarousel() {
+      return Container(
+        child: ListView(
+          children: [
+            SizedBox(height: 50,),
+            Text("mSlider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
+            CarouselSlider(
+              //1st methode
+              options: CarouselOptions(height: 186,initialPage:0 ,onPageChanged: (index ,_){setState(() {
+                            _currenIndex=index;
+                          });},enlargeCenterPage: true, autoPlay: true, autoPlayAnimationDuration: Duration(seconds:3 ), enableInfiniteScroll: false,pauseAutoPlayOnTouch: false, reverse: true),
+              items: imgList.map((imageUrl) {
+                return Container(
+                  width: double.infinity,
+                  //margin: EdgeInsets.symmetric(horizontal: 10),
+                  child:Image.asset(imageUrl,fit: BoxFit.fill,) ,
+                );
+              }).toList(),
+            ),
+            SizedBox(height: 30,),
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                buildContainer(0),
+                buildContainer(1),
+                buildContainer(2),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
 }
