@@ -37,6 +37,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
  final GlobalKey<ScaffoldState> _x =GlobalKey<ScaffoldState>();
  int _currenIndex;
+ int _radioValue=0;
+ String result;
+ Color resultColor;
  List imgList=[
   'images/s1.jpg',
   'images/s2.jpg',
@@ -83,15 +86,31 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.lightBlue,
             fontWeight: FontWeight.bold,fontSize: 26
           ),),
-          Row(
-            children: [
-              Radio(),
-              Text("3")
-            ],
-          )
+          buildRow(3,"Wrong answer!",Colors.red),
+          buildRow(4,"correct answer!",Colors.green),
+          buildRow(5,"Wrong answer!",Colors.red),
         ],
       )
     );
+  }
+
+  Row buildRow(int value, String result,Color resultColor) {
+    return Row(
+          children: [
+            Radio(
+              value: value,
+              groupValue:_radioValue ,
+              onChanged: (value){
+                setState(() {
+                  _radioValue=value;
+                  result=result;
+                  resultColor =resultColor;
+                });
+              },
+            ),
+            Text("$value")
+          ],
+        );
   }
 
 
