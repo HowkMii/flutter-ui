@@ -79,24 +79,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body:ListView(
         children: [
           SizedBox(height: 30,),
-          Text("Slider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
+          Text("mSlider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
           CarouselSlider(
             //1st methode
-            options: CarouselOptions(height: 186,initialPage:0 ),
+            options: CarouselOptions(height: 186,initialPage:0 ,enlargeCenterPage: true, autoPlay: true),
             items: imgList.map((imageUrl) {
               return Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                //margin: EdgeInsets.symmetric(horizontal: 10),
                 child:Image.asset(imageUrl,fit: BoxFit.fill,) ,
               );
             }).toList(),
           ),
-          Text("Slider 2 initial page Index 1\n\n",textAlign: TextAlign.center,),
-          CarouselSlider.builder(
-            itemCount: imgList.length,
-             
-             options: CarouselOptions(height: 186,initialPage:0 ),
-          ),
+         
         ],
       ),
     );
