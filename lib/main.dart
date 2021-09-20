@@ -36,6 +36,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
  final GlobalKey<ScaffoldState> _x =GlobalKey<ScaffoldState>();
+ int _currenIndex;
  List imgList=[
   'images/s1.jpg',
   'images/s2.jpg',
@@ -82,7 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
           Text("mSlider 1 initial page Index 0\n\n",textAlign: TextAlign.center,),
           CarouselSlider(
             //1st methode
-            options: CarouselOptions(height: 186,initialPage:0 ,scrollDirection: Axis.vertical,enlargeCenterPage: true, autoPlay: true, autoPlayAnimationDuration: Duration(seconds:1 ), enableInfiniteScroll: false,pauseAutoPlayOnTouch: false, reverse: true),
+            options: CarouselOptions(height: 186,initialPage:0 ,onPageChanged: (index ,_){setState(() {
+                          _currenIndex=index;
+                        });},enlargeCenterPage: true, autoPlay: true, autoPlayAnimationDuration: Duration(seconds:3 ), enableInfiniteScroll: false,pauseAutoPlayOnTouch: false, reverse: true),
             items: imgList.map((imageUrl) {
               return Container(
                 width: double.infinity,
@@ -91,7 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             }).toList(),
           ),
-         
+          SizedBox(height: 30,),
+          Container(
+            width: 10,
+            height: 10,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: _currenIndex==0? Colors.redAccent:Colors.green
+            ),
+          )
         ],
       ),
     );
