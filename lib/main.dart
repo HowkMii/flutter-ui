@@ -81,14 +81,14 @@ class _MyHomePageState extends State<MyHomePage> {
        
       ),
       body:Container(
-        color: Colors.brown ,
+        color:_radioValue==0? Colors.brown:Colors.green ,
         padding: EdgeInsets.all(32),
         child: Column(
           children: [
-            Row(
+            Row(  
               children: [
-                buildRadioList(0,"Brown","change Bg to brown  "),
-                buildRadioList(0,"Brown","change Bg to brown  "),
+                buildRadioList(0,"Brown","change Bg to brown"),
+                buildRadioList(1,"Green","change Bg to green"),
               ],
             ),
           ],
@@ -99,7 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  RadioListTile buildRadioList(val,txt,stxt) => RadioListTile(
+  RadioListTile buildRadioList(val,txt,stxt) {
+    return RadioListTile(
     value: val ,
     groupValue: _radioValue, 
     onChanged: (value){
@@ -107,11 +108,13 @@ class _MyHomePageState extends State<MyHomePage> {
               _radioValue=value;
             });
     },
-    title: txt,
-    subtitle: stxt,
+    title: Text(txt),
+    subtitle: Text(stxt),
     
 
   );
+
+  } 
   
  
 
