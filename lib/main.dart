@@ -80,22 +80,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:Container(
-        color:_radioValue==0? Colors.brown:Colors.green ,
-        padding: EdgeInsets.all(32),
-        child: Column(
+      body:Padding(
+        padding: const EdgeInsets.all(18.0),
+        child:Column(
           children: [
-            Row(  
-              children: [
-                buildRadioListTile(0,"Brown","change Bg to brown"),
-                buildRadioListTile(1,"Green","change Bg to green"),
-              ],
-            ),
+            
           ],
-        ),
-
-      )
-      
+        ) ,
+      )      
     );
   }
 
@@ -115,11 +107,6 @@ class _MyHomePageState extends State<MyHomePage> {
   );
 
   } 
-  
- 
-
-
-
   Container buildContainer(index) {
     return Container(
           width: 10,
