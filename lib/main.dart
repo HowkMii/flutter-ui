@@ -87,8 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Row(  
               children: [
-                buildRadioList(0,"Brown","change Bg to brown"),
-                buildRadioList(1,"Green","change Bg to green"),
+                buildRadioListTile(0,"Brown","change Bg to brown"),
+                buildRadioListTile(1,"Green","change Bg to green"),
               ],
             ),
           ],
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  RadioListTile buildRadioList(val,txt,stxt) {
+  RadioListTile buildRadioListTile(val,txt,stxt) {
     return RadioListTile(
     value: val ,
     groupValue: _radioValue, 
