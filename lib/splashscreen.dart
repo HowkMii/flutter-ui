@@ -13,8 +13,12 @@ class _MainSplachScreenState extends State<MainSplachScreen> {
       home: Scaffold(
         body: SplashScreen(
           backgroundColor: Colors.black45,
+          photoSize: 90,
+          image: Image.asset('images/s3.jpg'),
           seconds: 3,
           title: Text("Splash Screen"),
+          loaderColor: Colors.yellow,
+          loadingText: Text("Getting page ready"),
         ),
        
       ),
