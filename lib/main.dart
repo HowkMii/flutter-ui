@@ -1,11 +1,10 @@
-import 'dart:ffi';
-import 'package:flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
 import 'package:flutter/material.dart';
+import 'package:flutterui/splashscreen.dart';
+
 
 void main() {
-  runApp(MyHomePage());
+  runApp(MainSplachScreen());
 }
 
 class MyApp extends StatelessWidget {
@@ -99,54 +98,57 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-        body:ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ExpansionTile(
-                backgroundColor: Colors.pinkAccent,
-                leading: Icon(Icons.perm_identity),
-                title: Text("Account"),
-                children: [
-                  Divider(color: Colors.grey,),
-                  ListTile(
-                    leading: Icon(Icons.add),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    title: Text("Sign in"),
-                    subtitle: Text("where You can Register An account"),
-                    onTap: (){},
-
-                  )
-                 
-                ],
-              ),
-            ),
-            SizedBox(height: 10,),
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: ExpansionTile(
-                 backgroundColor: Colors.greenAccent,
-                title: Text("More info"),
-                children: [
-                  Divider(color: Colors.grey,),
-                  ListTile(
-                    leading: Icon(Icons.phone),
-                    title: Text("Contact"),
-                    subtitle: Text("where You can Callus"),
-                    onTap: (){},
-
-                  )
-                 
-                ],
-            ),
-             ),
-          ],
-        )   
+        body:Center()   
       )
     );
       
   }
 
+  ListView buildExpansionTile() {
+    return ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ExpansionTile(
+              backgroundColor: Colors.pinkAccent,
+              leading: Icon(Icons.perm_identity),
+              title: Text("Account"),
+              children: [
+                Divider(color: Colors.grey,),
+                ListTile(
+                  leading: Icon(Icons.add),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  title: Text("Sign in"),
+                  subtitle: Text("where You can Register An account"),
+                  onTap: (){},
+
+                )
+               
+              ],
+            ),
+          ),
+          SizedBox(height: 10,),
+           Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: ExpansionTile(
+               backgroundColor: Colors.greenAccent,
+              title: Text("More info"),
+              children: [
+                Divider(color: Colors.grey,),
+                ListTile(
+                  leading: Icon(Icons.phone),
+                  title: Text("Contact"),
+                  subtitle: Text("where You can Callus"),
+                  onTap: (){},
+
+                )
+               
+              ],
+          ),
+           ),
+        ],
+      );
+  }
   Center buildDropdownButton() {
     return Center(
         child: Row(
