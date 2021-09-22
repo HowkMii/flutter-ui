@@ -43,6 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
  bool js=false;
  bool cSharp = false;
  bool python = false;
+ String get txt{
+   String str ="You selected:\n";
+   if(js==true) str+="JavaScript\n";
+   if(cSharp==true) str+="C sharp\n";
+   
+   else str+="None\n";
+   return str;
+ }
  List imgList=[
   'images/s1.jpg',
   'images/s2.jpg',
@@ -115,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: (){
                 var ad =AlertDialog(
                   title: Text("Thank you for applying!"),
-                  content:Text(""),
+                  content:Text(txt),
                 );
                 showDialog(context: context, builder: (BuildContext ctx){
                    return ad;
