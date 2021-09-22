@@ -40,6 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
  int _radioValue=0;
  String result;
  Color resultColor;
+ bool js=false;
+ bool cSharp = false;
+ bool python = false;
  List imgList=[
   'images/s1.jpg',
   'images/s2.jpg',
@@ -84,6 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(18.0),
         child:Column(
           children: [
+            Row(
+              children:[
+                Checkbox(value: value, onChanged: onChanged),
+                Text(""),
+
+              ],
+            ),
+            CheckboxListTile(value: value, onChanged: onChanged, title: ,),
             
           ],
         ) ,
