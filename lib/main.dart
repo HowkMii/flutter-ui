@@ -61,31 +61,36 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
    
-    return Scaffold(
-      key: _x,
-      appBar: AppBar(
-
-        leading: Padding(padding: EdgeInsets.only(left: 1),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        primaryColor: Colors.blue,canvasColor: Colors.white
+      ),
+      darkTheme: ThemeData(primaryColor: Colors.deepPurple,canvasColor: Colors.black),
+      home:Scaffold(
+        key: _x,
+        appBar: AppBar(
+          leading: Padding(padding: EdgeInsets.only(left: 1),
           child:Row(
             children: [
               IconButton(icon: Icon(Icons.account_circle), onPressed: (){}),
               Expanded(child: IconButton(icon: Icon(Icons.account_circle), onPressed: (){}))
-            ],) ,
-        ),
-        actions: [
-          IconButton(icon: Icon(Icons.account_circle), onPressed: (){}),
-          IconButton(icon: Icon(Icons.account_circle), onPressed: (){})
-        ],
-        flexibleSpace: Container(
+             ],) ,
+            ),
+          actions: [
+            IconButton(icon: Icon(Icons.account_circle), onPressed: (){}),
+            IconButton(icon: Icon(Icons.account_circle), onPressed: (){})
+          ],
+          flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors:[
                 Colors.deepPurpleAccent,
                 Colors.pink
               ]
-              
             )
-
           ),
         ),
         centerTitle: true,
@@ -93,7 +98,9 @@ class _MyHomePageState extends State<MyHomePage> {
        
       ),
       body:Center()      
+      )
     );
+      
   }
 
   Padding buildCheckbox(BuildContext context) {
