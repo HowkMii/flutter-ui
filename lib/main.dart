@@ -102,30 +102,35 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-        body:Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Select a letter!"),
-              DropdownButton(
-                value:_selectedLetter,
-                items: 
-                 _letterList.map((item) {
-                   return DropdownMenuItem(child: Text(item),value: item,);
-                 }).toList(),
-                
-                onChanged: (newval){
-                  setState(() {
-                    _selectedLetter=newval;
-                  });
-                },
-                )
-            ],
-          ),
-        )    
+        body:Center()    
       )
     );
       
+  }
+
+  Center buildDropdownButton() {
+    return Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            
+            DropdownButton(
+              hint: Text("Select a letter!"),
+              value:_selectedLetter,
+              items: 
+               _letterList.map((item) {
+                 return DropdownMenuItem(child: Text(item),value: item,);
+               }).toList(),
+              
+              onChanged: (newval){
+                setState(() {
+                  _selectedLetter=newval;
+                });
+              },
+              )
+          ],
+        ),
+      );
   }
 
   Center thememodeee() {
