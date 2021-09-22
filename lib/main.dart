@@ -89,12 +89,27 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Row(
               children:[
-                Checkbox(value: value, onChanged: onChanged),
-                Text(""),
+                Checkbox(
+                  value: js, 
+                  onChanged: (value){
+                    setState(() {
+                      js=value;
+                    });
+                  }
+                ),
+                Text("JS"),
 
               ],
             ),
-            CheckboxListTile(value: value, onChanged: onChanged, title: ,),
+            CheckboxListTile(
+              value: cSharp, 
+              controlAffinity: ListTileControlAffinity.leading,
+              onChanged: (value){
+                    setState(() {
+                      cSharp=value;
+                    });
+                }, 
+              title:Text("C#") ,),
             
           ],
         ) ,
