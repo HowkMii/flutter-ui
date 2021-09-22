@@ -5,7 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyHomePage());
 }
 
 class MyApp extends StatelessWidget {
@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
  bool js=false;
  bool cSharp = false;
  bool python = false;
+ ThemeMode tm = ThemeMode.light;
  String get txt{
    String str ="You selected:\n";
    if(js==true) str+="JavaScript\n";
@@ -64,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      themeMode: ThemeMode.system,
+      themeMode: tm,
       theme: ThemeData(
         primaryColor: Colors.blue,canvasColor: Colors.white
       ),
@@ -97,7 +98,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:Center()      
+        body:Center(
+          
+        )      
       )
     );
       
