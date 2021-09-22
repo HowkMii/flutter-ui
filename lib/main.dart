@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:buildCheckbox(context),      
+      body:Center()      
     );
   }
 
