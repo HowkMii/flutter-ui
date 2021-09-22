@@ -110,7 +110,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                 }, 
               title:Text("C#") ,),
-            
+            RaisedButton(
+              child: Text("Apply!"),
+              onPressed: (){
+                var ad =AlertDialog(
+                  title: Text("Thank you for applying!"),
+                  content:Text(""),
+                );
+                showDialog(context: context, builder: (BuildContext ctx){
+                   return ad;
+               });
+              },
+            )
           ],
         ) ,
       )      
