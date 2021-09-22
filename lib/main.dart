@@ -91,51 +91,54 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-      body:Padding(
-        padding: const EdgeInsets.all(18.0),
-        child:Column(
-          children: [
-            Row(
-              children:[
-                Checkbox(
-                  value: js, 
-                  onChanged: (value){
-                    setState(() {
-                      js=value;
-                    });
-                  }
-                ),
-                Text("JS"),
-
-              ],
-            ),
-            CheckboxListTile(
-              value: cSharp, 
-              controlAffinity: ListTileControlAffinity.leading,
-              onChanged: (value){
-                    setState(() {
-                      cSharp=value;
-                    });
-                }, 
-              title:Text("C#") ,),
-            RaisedButton(
-              child: Text("Apply!"),
-              onPressed: (){
-                var ad =AlertDialog(
-                  title: Text("Thank you for applying!"),
-                  content:Text(txt),
-                );
-                showDialog(context: context, builder: (BuildContext ctx){
-                   return ad;
-               });
-              },
-            )
-          ],
-        ) ,
-      )      
+      body:buildCheckbox(context),      
     );
   }
 
+  Padding buildCheckbox(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child:Column(
+        children: [
+          Row(
+            children:[
+              Checkbox(
+                value: js, 
+                onChanged: (value){
+                  setState(() {
+                    js=value;
+                  });
+                }
+              ),
+              Text("JS"),
+
+            ],
+          ),
+          CheckboxListTile(
+            value: cSharp, 
+            controlAffinity: ListTileControlAffinity.leading,
+            onChanged: (value){
+                  setState(() {
+                    cSharp=value;
+                  });
+              }, 
+            title:Text("C#") ,),
+          RaisedButton(
+            child: Text("Apply!"),
+            onPressed: (){
+              var ad =AlertDialog(
+                title: Text("Thank you for applying!"),
+                content:Text(txt),
+              );
+              showDialog(context: context, builder: (BuildContext ctx){
+                 return ad;
+             });
+            },
+          )
+        ],
+      ) ,
+    );
+  }
   RadioListTile buildRadioListTile(val,txt,stxt) {
     return RadioListTile(
     value: val ,
