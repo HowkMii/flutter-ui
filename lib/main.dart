@@ -69,10 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       themeMode: tm,
-      
-      theme: ThemeData(
-        primaryColor: Colors.blue,canvasColor: Colors.white
-      ),
+      theme: ThemeData(primaryColor: Colors.blue,canvasColor: Colors.white),
       darkTheme: ThemeData(primaryColor: Colors.black,canvasColor: Colors.black87),
       home:Scaffold(
         key: _x,
@@ -102,7 +99,18 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-        body:Center()    
+        body:ListView(
+          children: [
+            ExpansionTile(
+              title: Text("#1"),
+              children: [
+                Text("#2"),
+                Text("#3"),
+                Text("#4"),
+              ],
+            ),
+          ],
+        )   
       )
     );
       
@@ -132,7 +140,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
   }
-
   Center thememodeee() {
     return Center(
         child: 
