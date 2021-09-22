@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterui/main.dart';
 import 'package:splashscreen/splashscreen.dart';
 class MainSplachScreen extends StatefulWidget {
   @override
@@ -16,6 +17,7 @@ class _MainSplachScreenState extends State<MainSplachScreen> {
           photoSize: 90,
           image: Image.asset('images/s3.jpg'),
           seconds: 3,
+          navigateAfterSeconds: MyHomePage(),
           title: Text("Splash Screen"),
           loaderColor: Colors.yellow,
           loadingText: Text("Getting page ready"),
