@@ -15,10 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      themeMode: ThemeMode.system,
       theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,canvasColor: Colors.white
       ),
+      darkTheme: ThemeData(primaryColor: Colors.deepPurple,canvasColor: Colors.black),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
