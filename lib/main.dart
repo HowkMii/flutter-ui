@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
  bool cSharp = false;
  bool python = false;
  ThemeMode tm = ThemeMode.light;
+ bool _swval=false;
  String get txt{
    String str ="You selected:\n";
    if(js==true) str+="JavaScript\n";
@@ -66,10 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       themeMode: tm,
+      
       theme: ThemeData(
         primaryColor: Colors.blue,canvasColor: Colors.white
       ),
-      darkTheme: ThemeData(primaryColor: Colors.deepPurple,canvasColor: Colors.black),
+      darkTheme: ThemeData(primaryColor: Colors.black,canvasColor: Colors.black87),
       home:Scaffold(
         key: _x,
         appBar: AppBar(
@@ -98,14 +100,44 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-        body:Center(
-          
-        )      
+        body:Center()    
       )
     );
       
   }
 
+  Center thememodeee() {
+    return Center(
+        child: 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text("Light"),
+              ),
+              Switch(
+                value: _swval, 
+                onChanged: (bool value){
+                  setState(() {
+                    _swval=value;
+                    if(_swval==false)tm=ThemeMode.light;
+                    else tm=ThemeMode.dark;
+                  });
+
+                },
+                activeColor: Colors.black,
+                inactiveThumbColor: Colors.white,
+                ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text("Dark"),
+              )
+            ],
+
+        ),
+      );
+  }
   Padding buildCheckbox(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
