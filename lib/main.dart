@@ -46,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
  bool python = false;
  ThemeMode tm = ThemeMode.light;
  bool _swval=false;
+ String _selectedLetter;
  String get txt{
    String str ="You selected:\n";
    if(js==true) str+="JavaScript\n";
@@ -54,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
    else str+="None\n";
    return str;
  }
+ List _letterList = ['A','B','C','D','E'];
  List imgList=[
   'images/s1.jpg',
   'images/s2.jpg',
@@ -100,7 +102,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
        
       ),
-        body:Center()    
+        body:Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Select a letter!"),
+              DropdownButton(
+                value:_selectedLetter,
+                items: 
+                 _letterList.map((item) {
+                   return DropdownMenuItem(child: Text(item),value: item,);
+                 }).toList(),
+                
+                onChanged: (newval){
+                  setState(() {
+                    _selectedLetter=newval;
+                  });
+                },
+                )
+            ],
+          ),
+        )    
       )
     );
       
