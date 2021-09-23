@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterui/splashscreen.dart';
+import 'package:flutterui/view.dart';
 
 
 void main() {
-  runApp(MainSplachScreen());
+  runApp(PView());
 }
 
 class MyApp extends StatelessWidget {
