@@ -51,7 +51,10 @@ class _PViewState extends State<PView> {
         body: PageView(
           children: 
             myData.map((item) => Container(
-              color: Colors.indigo,
+              
+              decoration:BoxDecoration(
+                image: DecorationImage(image: ExactAssetImage(item.imageUrl),fit: BoxFit.cover)
+              ) ,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
