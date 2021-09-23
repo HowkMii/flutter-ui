@@ -48,25 +48,36 @@ class _PViewState extends State<PView> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: PageView(
-          children: 
-            myData.map((item) => Container(
-              
-              decoration:BoxDecoration(
-                image: DecorationImage(image: ExactAssetImage(item.imageUrl),fit: BoxFit.cover)
-              ) ,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(item.iconData,size: 70,),
-                  SizedBox(height: 50),
-                  Text(item.title,style: TextStyle(color: Colors.black,fontSize: 26,fontWeight: FontWeight.bold),),
-                  SizedBox(height: 10),
-                  Text(item.descreption, style: TextStyle(color: Colors.white,fontSize: 16),textAlign: TextAlign.center,)
-                ],
+        body: Stack(
+          children: [
+            PageView(
+            children: 
+              myData.map((item) => Container(
+                
+                decoration:BoxDecoration(
+                  image: DecorationImage(image: ExactAssetImage(item.imageUrl),fit: BoxFit.cover)
+                ) ,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(item.iconData,size: 70,),
+                    SizedBox(height: 50),
+                    Text(item.title,style: TextStyle(color: Colors.black,fontSize: 26,fontWeight: FontWeight.bold),),
+                    SizedBox(height: 10),
+                    Text(item.descreption, style: TextStyle(color: Colors.white,fontSize: 16),textAlign: TextAlign.center,)
+                  ],
+                ),
+              )).toList(),
+            
+          ),
+          Center(
+            child: RaisedButton(
+                color: Colors.yellow,
+                child: Text("Get Started",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+                onPressed: (){},
               ),
-            )).toList(),
-          
+          )
+          ],
         ),
       ),
       
