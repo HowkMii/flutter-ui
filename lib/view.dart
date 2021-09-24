@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutterui/main.dart';
 import 'package:flutterui/splashscreen.dart';
@@ -59,6 +61,7 @@ class PView extends StatefulWidget {
 
 class _PViewState extends State<PView> {
   int _currentIndex=0;
+  final PageController _controller =PageController();
   List<Data> myData =[
     Data(
       title: "title 1", 
@@ -82,6 +85,14 @@ class _PViewState extends State<PView> {
       iconData: Icons.ac_unit),
   ];
   @override
+    void initState() {
+     Timer.periodic(Duration(seconds: 2), (timer){
+       if(_currentIndex<3) _currentIndex++;
+      _controller.animateToPage(_currentIndex, duration: Duration(milliseconds: 3), curve: Curves.easeIn);
+     });
+      
+    }
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
@@ -94,6 +105,7 @@ class _PViewState extends State<PView> {
           children: [
             Builder(
               builder:(ctx)=> PageView(
+                controller:  _controller,
               children: 
                 myData.map((item) => Container(
                   
