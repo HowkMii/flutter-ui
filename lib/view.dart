@@ -92,31 +92,37 @@ class _PViewState extends State<PView> {
       home: Scaffold(
         body: Stack(
           children: [
-            PageView(
-            children: 
-              myData.map((item) => Container(
-                
-                decoration:BoxDecoration(
-                  image: DecorationImage(image: ExactAssetImage(item.imageUrl),fit: BoxFit.cover)
-                ) ,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(item.iconData,size: 70,),
-                    SizedBox(height: 50),
-                    Text(item.title,style: TextStyle(color: Colors.black,fontSize: 26,fontWeight: FontWeight.bold),),
-                    SizedBox(height: 10),
-                    Text(item.descreption, style: TextStyle(color: Colors.white,fontSize: 16),textAlign: TextAlign.center,)
-                  ],
-                ),
-              )).toList(),
-              onPageChanged: (val){
-                setState(() {
-                  _currentIndex=val;
-                });
-              },
-            
+            Builder(
+              builder:(ctx)=> PageView(
+              children: 
+                myData.map((item) => Container(
+                  
+                  decoration:BoxDecoration(
+                    image: DecorationImage(image: ExactAssetImage(item.imageUrl),fit: BoxFit.cover)
+                  ) ,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(item.iconData,size: 70,),
+                      SizedBox(height: 50),
+                      Text(item.title,style: TextStyle(color: Colors.black,fontSize: 26,fontWeight: FontWeight.bold),),
+                      SizedBox(height: 10),
+                      Text(item.descreption, style: TextStyle(color: Colors.white,fontSize: 16),textAlign: TextAlign.center,)
+                    ],
+                  ),
+                )).toList(),
+                onPageChanged: (val){
+                  setState(() {
+                    _currentIndex=val;
+                    if(_currentIndex==3){
+                      Future.delayed(Duration(seconds: 1),()=>Navigator.of(ctx).pushNamed('/b'));
+                    }
+                    
+                  });
+                },
+              
           ),
+            ),
           Indicator(_currentIndex),
           Builder(
             builder: (ctx)=>Align(
