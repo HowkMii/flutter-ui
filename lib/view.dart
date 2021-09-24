@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterui/main.dart';
+import 'package:flutterui/splashscreen.dart';
 
 class Data{
   final String title;
@@ -46,6 +48,10 @@ class _PViewState extends State<PView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/a':(ctx)=> MyHomePage(),
+        '/b':(ctx)=> MainSplachScreen(),
+      },
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
@@ -70,20 +76,25 @@ class _PViewState extends State<PView> {
               )).toList(),
             
           ),
-          Align(
-            alignment: Alignment(0,0.9),
-            
-            child: Container(
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 30),
-              child: RaisedButton(
-                padding: EdgeInsets.all(7),
-                  color: Colors.yellow,
-                  child: Text("Get Started",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
-                  onPressed: (){},
-                ),
-            ),
+          Builder(
+            builder: (ctx)=>Align(
+              alignment: Alignment(0,0.9),
+              
+              child: Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 30),
+                child: RaisedButton(
+                  padding: EdgeInsets.all(7),
+                    color: Colors.yellow,
+                    child: Text("Get Started",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+                    onPressed: (){
+                      Navigator.of(ctx).pushNamed('/b');
+                    },
+                  ),
+              ),
           )
+            
+            )
           ],
         ),
       ),
