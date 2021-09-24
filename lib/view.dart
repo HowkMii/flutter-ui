@@ -16,13 +16,49 @@ class Data{
   });
 
 }
+class Indicator extends StatelessWidget{
+  final int index;
+  Indicator(this.index);
+  @override
+  Widget build(BuildContext context) {
+   return Align(
+     alignment: Alignment(0,0.7),
+     child: Row(
+       mainAxisAlignment: MainAxisAlignment.center,
+       children: [
+         buildContainer(index==0?Colors.white:Colors.grey),
+         buildContainer(index==1?Colors.white:Colors.grey),
+         buildContainer(index==2?Colors.white:Colors.grey),
+         buildContainer(index==3?Colors.white:Colors.grey),
+       ],
+     ),
+   );
+  }
 
-class PView extends StatefulWidget {
+  Container buildContainer(Color color ) {
+    return Container(
+      margin: EdgeInsets.all(4),
+      height: 15,
+      width: 15,
+      decoration: BoxDecoration(
+      color: color,
+      shape: BoxShape.circle,
+        
+   ),
+ );
+  }
+
+}
+
+
+class PView extends StatefulWidget { 
+  
   @override
   _PViewState createState() => _PViewState();
 }
 
 class _PViewState extends State<PView> {
+  int _currentIndex=0;
   List<Data> myData =[
     Data(
       title: "title 1", 
@@ -74,8 +110,14 @@ class _PViewState extends State<PView> {
                   ],
                 ),
               )).toList(),
+              onPageChanged: (val){
+                setState(() {
+                  _currentIndex=val;
+                });
+              },
             
           ),
+          Indicator(_currentIndex),
           Builder(
             builder: (ctx)=>Align(
               alignment: Alignment(0,0.9),
