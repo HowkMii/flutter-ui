@@ -70,12 +70,19 @@ class _PViewState extends State<PView> {
               )).toList(),
             
           ),
-          Center(
-            child: RaisedButton(
-                color: Colors.yellow,
-                child: Text("Get Started",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
-                onPressed: (){},
-              ),
+          Align(
+            alignment: Alignment(0,0.9),
+            
+            child: Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              child: RaisedButton(
+                padding: EdgeInsets.all(7),
+                  color: Colors.yellow,
+                  child: Text("Get Started",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+                  onPressed: (){},
+                ),
+            ),
           )
           ],
         ),
