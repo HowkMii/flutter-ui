@@ -28,17 +28,17 @@ class Indicator extends StatelessWidget{
      child: Row(
        mainAxisAlignment: MainAxisAlignment.center,
        children: [
-         buildContainer(index==0?Colors.white:Colors.grey),
-         buildContainer(index==1?Colors.white:Colors.grey),
-         buildContainer(index==2?Colors.white:Colors.grey),
-         buildContainer(index==3?Colors.white:Colors.grey),
+         buildContainer(0,index==0?Colors.white:Colors.grey),
+         buildContainer(1,index==1?Colors.white:Colors.grey),
+         buildContainer(2,index==2?Colors.white:Colors.grey),
+         buildContainer(3,index==3?Colors.white:Colors.grey),
        ],
      ),
    );
   }
 
-  Container buildContainer(Color color ) {
-    return Container(
+  Container buildContainer(int i, Color color ) {
+    return index==i? Icon(Icons.star) : Container(
       margin: EdgeInsets.all(4),
       height: 15,
       width: 15,
@@ -86,7 +86,7 @@ class _PViewState extends State<PView> {
   ];
   @override
     void initState() {
-     Timer.periodic(Duration(seconds: 2), (timer){
+     Timer.periodic(Duration(seconds: 6), (timer){
        if(_currentIndex<3) _currentIndex++;
       _controller.animateToPage(_currentIndex, duration: Duration(milliseconds: 3), curve: Curves.easeIn);
      });
