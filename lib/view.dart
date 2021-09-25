@@ -127,11 +127,11 @@ class _PViewState extends State<PView> {
                   ),
                 )).toList(),
                 onPageChanged: (val){ 
-                  _pageIndexNotifier.value ==val;
+                  _pageIndexNotifier.value = val;
                   setState(() {
                     _currentIndex=val;
                     if(_currentIndex==3){
-                      Future.delayed(Duration(seconds: 2),()=>Navigator.of(ctx).pushNamed('/b'));
+                      Future.delayed(Duration(seconds: 6),()=>Navigator.of(ctx).pushNamed('/b'));
                     }
                     
                   });
@@ -143,11 +143,11 @@ class _PViewState extends State<PView> {
           PageViewIndicator(
             pageIndexNotifier: _pageIndexNotifier,
             length: myData.length,
-            normalBuilder: (animationController, index) => Circle(
+            normalBuilder: (_, index) => Circle(
                   size: 8.0,
                   color: Colors.black87,
                 ),
-            highlightedBuilder: (animationController, index) => ScaleTransition(
+            highlightedBuilder: (animationController, _) => ScaleTransition(
                   scale: CurvedAnimation(
                     parent: animationController,
                     curve: Curves.ease,
