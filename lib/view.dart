@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutterui/main.dart';
 import 'package:flutterui/splashscreen.dart';
+import 'package:page_view_indicator/page_view_indicator.dart'; 
 
 class Data{
   final String title;
@@ -61,6 +62,7 @@ class PView extends StatefulWidget {
 
 class _PViewState extends State<PView> {
   int _currentIndex=0;
+   final _pageIndexNotifier = ValueNotifier<int>(0);
   final PageController _controller =PageController();
   List<Data> myData =[
     Data(
@@ -102,6 +104,7 @@ class _PViewState extends State<PView> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
+          alignment: Alignment(0,0.7),
           children: [
             Builder(
               builder:(ctx)=> PageView(
@@ -123,11 +126,12 @@ class _PViewState extends State<PView> {
                     ],
                   ),
                 )).toList(),
-                onPageChanged: (val){
+                onPageChanged: (val){ 
+                  _pageIndexNotifier.value ==val;
                   setState(() {
                     _currentIndex=val;
                     if(_currentIndex==3){
-                      Future.delayed(Duration(seconds: 1),()=>Navigator.of(ctx).pushNamed('/b'));
+                      Future.delayed(Duration(seconds: 2),()=>Navigator.of(ctx).pushNamed('/b'));
                     }
                     
                   });
@@ -135,7 +139,25 @@ class _PViewState extends State<PView> {
               
           ),
             ),
-          Indicator(_currentIndex),
+          //Indicator(_currentIndex),
+          PageViewIndicator(
+            pageIndexNotifier: _pageIndexNotifier,
+            length: myData.length,
+            normalBuilder: (animationController, index) => Circle(
+                  size: 8.0,
+                  color: Colors.black87,
+                ),
+            highlightedBuilder: (animationController, index) => ScaleTransition(
+                  scale: CurvedAnimation(
+                    parent: animationController,
+                    curve: Curves.ease,
+                  ),
+                  child: Circle(
+                    size: 12.0,
+                    color: Colors.white,
+                  ),
+                ),
+          ),
           Builder(
             builder: (ctx)=>Align(
               alignment: Alignment(0,0.9),
