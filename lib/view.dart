@@ -37,7 +37,7 @@ class Indicator extends StatelessWidget{
    );
   }
 
-  Container buildContainer(int i, Color color ) {
+  Widget buildContainer(int i, Color color ) {
     return index==i? Icon(Icons.star) : Container(
       margin: EdgeInsets.all(4),
       height: 15,
