@@ -4,6 +4,7 @@ import 'package:flutterui/view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences perfs=await SharedPreferences.getInstance();
   bool decision =perfs.getBool('h');
   Widget _screen = (decision==false||decision==null)?PView():MyHomePage();

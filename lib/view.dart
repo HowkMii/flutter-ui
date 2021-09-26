@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutterui/main.dart';
 import 'package:flutterui/splashscreen.dart';
@@ -131,9 +130,9 @@ class _PViewState extends State<PView> {
                   _pageIndexNotifier.value = val;
                   setState(() {
                     _currentIndex=val;
-                    if(_currentIndex==3){
+                  /*  if(_currentIndex==3){
                       Future.delayed(Duration(seconds: 6),()=>Navigator.of(ctx).pushNamed('/b'));
-                    }
+                    }*/
                     
                   });
                 },
