@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterui/main.dart';
 import 'package:flutterui/splashscreen.dart';
 import 'package:page_view_indicator/page_view_indicator.dart'; 
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Data{
   final String title;
