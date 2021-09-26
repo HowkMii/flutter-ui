@@ -5,8 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   SharedPreferences perfs=await SharedPreferences.getInstance();
-  perfs.getBool('h');
-  runApp(PView());
+  bool decision =perfs.getBool('h');
+  Widget _screen = (decision==false||decision==null)?PView():MyHomePage();
+  runApp(_screen);
 }
 
 class MyApp extends StatelessWidget {
