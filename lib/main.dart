@@ -1,9 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterui/view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-
-void main() {
+void main() async {
+  SharedPreferences perfs=await SharedPreferences.getInstance();
+  perfs.getBool('h');
   runApp(PView());
 }
 

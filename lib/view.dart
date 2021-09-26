@@ -170,8 +170,10 @@ class _PViewState extends State<PView> {
                   padding: EdgeInsets.all(7),
                     color: Colors.yellow,
                     child: Text("Get Started",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
-                    onPressed: (){
+                    onPressed: ()async{
                       Navigator.of(ctx).pushNamed('/b');
+                      SharedPreferences perfs=await SharedPreferences.getInstance();
+                      perfs.setBool('h', true);
                     },
                   ),
               ),
