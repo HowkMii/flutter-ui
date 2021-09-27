@@ -5,8 +5,8 @@ class MyColor extends InheritedWidget {
   final Color color;
   final Widget child;
   MyColor({
-    @required this.child,
     @required this.color,
+    @required this.child,
   });
   @override
   bool updateShouldNotify(MyColor oldWidget) {

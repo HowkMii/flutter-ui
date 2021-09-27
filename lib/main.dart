@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor:MyColor.of(ctx).color,
                 ),) ,
           
-          )
+          ),
       ),
       ),
 
