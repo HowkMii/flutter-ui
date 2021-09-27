@@ -4,11 +4,11 @@ import 'package:flutterui/view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  /*WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences perfs=await SharedPreferences.getInstance();
   bool decision =perfs.getBool('h');
-  Widget _screen = (decision==false||decision==null)?PView():MyHomePage();
-  runApp(_screen);
+  Widget _screen = (decision==false||decision==null)?PView():MyHomePage();*/
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,20 +18,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      themeMode: ThemeMode.system,
+      /*themeMode: ThemeMode.system,
       theme: ThemeData(
         primaryColor: Colors.blue,canvasColor: Colors.white
       ),
-      darkTheme: ThemeData(primaryColor: Colors.deepPurple,canvasColor: Colors.black),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      darkTheme: ThemeData(primaryColor: Colors.deepPurple,canvasColor: Colors.black),*/
+      //home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-  
-
   final String title;
 
   @override
@@ -39,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- final GlobalKey<ScaffoldState> _x =GlobalKey<ScaffoldState>();
+ /*final GlobalKey<ScaffoldState> _x =GlobalKey<ScaffoldState>();
  int _currenIndex;
  int _radioValue=0;
  String result;
@@ -63,12 +62,17 @@ class _MyHomePageState extends State<MyHomePage> {
   'images/s1.jpg',
   'images/s2.jpg',
   'images/s3.jpg',
- ];
+ ];*/
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('data'),),
+      body: Center(),
+
+    );
    
-    return MaterialApp(
+    /*return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       themeMode: tm,
@@ -312,6 +316,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-      );
+      );*/
     }
 }
