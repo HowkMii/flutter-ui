@@ -9,7 +9,7 @@ class MyColor extends InheritedWidget {
   });
   @override
   bool updateShouldNotify(MyColor oldWidget) {
-    true;
+    return true !=oldWidget.color;
 
   }
 
