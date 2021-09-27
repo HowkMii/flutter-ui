@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyColor extends InheritedWidget {
+ 
   final Color color;
   final Widget child;
   MyColor({
@@ -9,9 +10,9 @@ class MyColor extends InheritedWidget {
   });
   @override
   bool updateShouldNotify(MyColor oldWidget) {
-    return true !=oldWidget.color;
+    return color != oldWidget.color;
 
   }
-  static MyColor of(context) => context.InheritedFromXidgetOfExactType(MyColor);
+  static MyColor of(context) => context.inheritFromWidgetOfExactType(MyColor);
 
 }

@@ -1,7 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
+/*import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutterui/view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';*/
+import 'package:flutter/material.dart';
+import 'package:flutterui/mycolor.dart';
 
 void main() async {
   /*WidgetsFlutterBinding.ensureInitialized();
@@ -68,7 +69,23 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('data'),),
-      body: Center(),
+      body: Center(
+        
+        child:MyColor(
+          color: Colors.pinkAccent,
+          child:Builder(
+            builder: (ctx)=> Text(
+              "data",
+              style: 
+                TextStyle(
+                  fontSize: 33,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor:MyColor.of(ctx).color,
+                ),) ,
+          
+          )
+      ),
+      ),
 
     );
    
