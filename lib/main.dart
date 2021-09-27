@@ -70,21 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(title: Text('data'),),
       body: Center(
-        
-        child:MyColor(
-          color: Colors.pinkAccent,
-          child:Builder(
-            builder: (ctx)=> Text(
-              "data",
-              style: 
-                TextStyle(
-                  fontSize: 33,
-                  fontWeight: FontWeight.bold,
-                  backgroundColor:MyColor.of(ctx).color,
-                ),) ,
-          
-          ),
-      ),
       ),
 
     );
