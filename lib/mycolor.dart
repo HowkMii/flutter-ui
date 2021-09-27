@@ -12,5 +12,6 @@ class MyColor extends InheritedWidget {
     return true !=oldWidget.color;
 
   }
+  static MyColor of(context) => context.InheritedFromXidgetOfExactType(MyColor);
 
 }
