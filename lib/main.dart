@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 70,
             child: Card(
               color: Colors.teal,
-              child: Marquee(text: "Simple Marque",blankSpace:200, ),
+              child: Marquee(text: "Simple Marque",blankSpace:200, crossAxisAlignment: CrossAxisAlignment.start,pauseAfterRound: Duration(seconds: 1),accelerationDuration:Duration(microseconds: 500) ,),
               
             ),
           ),
