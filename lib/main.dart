@@ -3,6 +3,7 @@ import 'package:flutterui/view.dart';
 import 'package:shared_preferences/shared_preferences.dart';*/
 import 'package:flutter/material.dart';
 import 'package:flutterui/mycolor.dart';
+import 'package:marquee/marquee.dart';
 
 void main() async {
   /*WidgetsFlutterBinding.ensureInitialized();
@@ -69,8 +70,29 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('data'),),
-      body: Center(
+      body: ListView(
+        children: <Widget>[
+          SizedBox(height: 15,),
+          SizedBox(
+            height: 70,
+            child: Card(
+              color: Colors.teal,
+              child: Marquee(text: "Simple Marque",blankSpace:200, ),
+              
+            ),
+          ),
+          SizedBox(height: 15,),
+          SizedBox(
+            height: 70,
+              child:Card(
+                color: Colors.teal,
+                child: Marquee(text: "Simple Marque",),
+              ),
+          )
+        ],
+        
       ),
+
 
     );
    
