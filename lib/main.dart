@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 70,
               child:Card(
                 color: Colors.teal,
-                child: Marquee(text: "Simple Marque",),
+                child: Marquee(text: "Simple Marque",blankSpace: 50,scrollAxis: Axis.vertical,),
               ),
           )
         ],
