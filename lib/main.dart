@@ -45,7 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
   File _image;
   final picker = ImagePicker();
   Future  getImage(ImageSource src) async{
-  final PickedFile = picker.getImage(source: src);
+  final pickedFile = await picker.getImage(source: src);
+ setState(() {
+     if(pickedFile != null){
+    _image = File(pickedFile.path);
+  }else{
+    print("No image selected");
+  }
+  });
   }
  /*final GlobalKey<ScaffoldState> _x =GlobalKey<ScaffoldState>();
  int _currenIndex;
@@ -78,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(title: Text('data'),),
       body:Center(
-        child: Text('No image selected.'),
+        child:_image==null? Text('No image selected.'),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_a_photo),
@@ -96,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: Icon(Icons.image),
                       title: Text("Gallery"),
                       onTap: (){
+                        getImage(ImageSource.gallery);
                         Navigator.of(context).pop();
 
                       },
@@ -108,6 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: Icon(Icons.image),
                       title: Text("Camera"),
                       onTap: (){
+                        getImage(ImageSource.camera);
                         Navigator.of(context).pop();
 
                       },
