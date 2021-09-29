@@ -39,7 +39,7 @@ dev_dependencies:
   carousel_slider: ^4.0.0
   page_view_indicator: ^2.0.4
   splashscreen: ^1.3.5
-  image_picker: ^0.6.7+11
+  image_picker:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

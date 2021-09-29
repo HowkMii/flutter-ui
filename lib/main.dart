@@ -1,9 +1,11 @@
 /*import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutterui/view.dart';
 import 'package:shared_preferences/shared_preferences.dart';*/
+import 'dart:html';
+
 import 'package:flutter/material.dart';
-import 'package:flutterui/mycolor.dart';
-import 'package:marquee/marquee.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 void main() async {
   /*WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +42,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  File _image;
+  final picker = ImagePicker();
+  Future  getImage(ImageSource src) async{
+  final PickedFile = picker.getImage(source: src);
+  }
  /*final GlobalKey<ScaffoldState> _x =GlobalKey<ScaffoldState>();
  int _currenIndex;
  int _radioValue=0;
@@ -70,30 +77,53 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('data'),),
-      body: ListView(
-        children: <Widget>[
-          SizedBox(height: 15,),
-          SizedBox(
-            height: 70,
-            child: Card(
-              color: Colors.teal,
-              child: Marquee(text: "Simple Marque",blankSpace:200, crossAxisAlignment: CrossAxisAlignment.start,pauseAfterRound: Duration(seconds: 1),accelerationDuration:Duration(microseconds: 500) ,),
-              
-            ),
-          ),
-          SizedBox(height: 15,),
-          SizedBox(
-            height: 70,
-              child:Card(
-                color: Colors.teal,
-                child: Marquee(text: "Simple Marque",blankSpace: 50,scrollAxis: Axis.vertical,),
-              ),
-          )
-        ],
-        
+      body:Center(
+        child: Text('No image selected.'),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add_a_photo),
+        onPressed: (){
+          var ad=AlertDialog(
+            title: Text("choose Picture from:"),
+            content: Container(
+              height: 150,
+              child: Column(
+                children: [
+                  Divider(color: Colors.black,),
+                  Container(
+                    color: Colors.teal,
+                    child: ListTile(
+                      leading: Icon(Icons.image),
+                      title: Text("Gallery"),
+                      onTap: (){
+                        Navigator.of(context).pop();
 
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 10,),
+                  Container(
+                    color: Colors.teal,
+                    child: ListTile(
+                      leading: Icon(Icons.image),
+                      title: Text("Camera"),
+                      onTap: (){
+                        Navigator.of(context).pop();
 
+                      },
+
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+          );
+          showDialog(context: context, builder: (BuildContext ctx){
+                   return ad;});
+        },
+      ),
     );
    
     /*return MaterialApp(
